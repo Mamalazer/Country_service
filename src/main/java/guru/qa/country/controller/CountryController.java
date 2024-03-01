@@ -24,17 +24,17 @@ public class CountryController {
         return countryService.getAllCountries();
     }
 
-    @GetMapping("/country/{countryCode}")
+    @GetMapping("/countries/{countryCode}")
     public Country getCountryByCode(@PathVariable String countryCode) {
         return fromEntity(countryService.getCountryByCode(countryCode));
     }
 
-    @PostMapping("/country")
+    @PostMapping("/countries")
     public Country addCountry(@RequestBody Country country) {
         return fromEntity(countryService.addCountry(country));
     }
 
-    @PatchMapping("/country/{countryCode}")
+    @PatchMapping("/countries/{countryCode}")
     public Country updateCountryName(@PathVariable String countryCode, @RequestBody Country country) {
         return fromEntity(countryService.updateCountryName(countryCode, country));
     }
